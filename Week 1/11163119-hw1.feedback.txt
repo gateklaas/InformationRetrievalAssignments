@@ -1,0 +1,10 @@
+						Max Points	Actual Points	Explanation
+Klaas Schuijtemaker	11163119	Step 1:	5		5	
+      					Step 2:	25   		25	
+			     		Step 3:	20   		18	In interleaving I don't see how holding team_A and team_B can help you determine which document in the interleaved ranked list belongs to which list. You should be keeping the indexes (-2pts)
+			     	  	Step 4: 20		19 The p of the random click model is too high, but I cannot really spot the mistake here. I think the doc_count += len(session_query.doc_list) is outside the right loop, so it counts documents for 1 query in each session. If there are about 5 queries per session then p should be around 0.1 which sounds more reasonable (-1pts)
+				       	Step 5:	15 		14  Here is becomes apparent the issue with not keeping the indexes but the relevance labels, since now you can only know whether a relevance label is in A or B. If instead of relevance labels you had doc ids that would have worked fine (although in that case you should check for duplicate docs across the rankings in the pair) (-1pts)
+				       	Step 6: 5    		5  
+					Step 7: 10 		10	Good job with the analysis. Two points: (a) it surprises me that the RCM allows at all the comparison of the two algorithms - one would expect an infinite sample size given that it is totally random, but this may have to do with the limitted simulation, (b) the sequential testing although we didn;t discuss it in the class is not an option. This has to do with the fact that every time you test you have a chance of 5% wrongly rejecting the hypothesis, hence at the first test this is 0.05, at the second test it is 0.95*0.05 (that is you didn;t reject the previous one, but now again with 5% chance you wrongly reject it) and so on. Hence even if the null hypothesis is not correct every time you test you increase the chance of a mistake. 
+						      	       	2	(2pts) for doing the end-to-end coding and analysis
+							       	98	 
