@@ -1,8 +1,7 @@
-Information Retrieval assignments
+Information Retrieval HW
 ===========
 
 ### Assignment details ###
 
 Universiteit van Amsterdam (UVA).
-Information Retrieval homework assignments
-January 2016.
+Information Retrieval homework assignments.
